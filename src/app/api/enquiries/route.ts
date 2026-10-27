@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 import { enquirySchema } from "@/lib/validation";
 import { exceedsBodyLimit, isJsonRequest, isSameOriginRequest } from "@/lib/security";
+import { checkEnquiryRateLimit } from "@/lib/rate-limit";
 export async function POST(request: Request) {
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const clientKey = forwardedFor || request.headers.get("x-real-ip") || "unknown-client";
+  const limit = checkEnquiryRateLimit(clientKey);
+  if (!limit.allowed) return NextResponse.json({error:"Too many enquiries. Please wait before trying again."},{status:429,headers:{"Retry-After":String(limit.retryAfterSeconds)}});
   if (!isSameOriginRequest(request)) return NextResponse.json({error:"Cross-origin requests are not accepted."},{status:403});
   if (!isJsonRequest(request)) return NextResponse.json({error:"Submit a valid request."},{status:415});
   if (exceedsBodyLimit(request)) return NextResponse.json({error:"Request is too large."},{status:413});
