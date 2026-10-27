@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import type { FarmProduct } from "@/content/products";
+export function ProductCard({product}:{product:FarmProduct}){return <Link className="product-card" href={"/products/"+product.slug}><div className="image-placeholder" style={{aspectRatio:"4/3"}} role="img" aria-label={"Placeholder for "+product.name}><span className="image-caption">Product photo to be supplied</span></div><div style={{padding:"19px 0"}}><span className="eyebrow">{product.category}</span><h3 style={{fontFamily:"var(--serif)",fontWeight:400,fontSize:27,margin:"10px 0"}}>{product.name}</h3><p className="muted" style={{fontSize:12,lineHeight:1.8}}>{product.description}</p><span style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:11,fontWeight:700,color:"var(--forest)"}}>View details <ArrowUpRight size={14}/></span></div></Link>}
