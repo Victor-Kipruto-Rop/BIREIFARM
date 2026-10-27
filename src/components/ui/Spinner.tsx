@@ -1,0 +1,1 @@
+export function Spinner({label="Loading"}:{label?:string}){return <span role="status" aria-label={label} style={{display:"inline-block",width:18,height:18,border:"2px solid var(--line)",borderTopColor:"var(--forest)",borderRadius:"50%",animation:"spinner-rotate .7s linear infinite"}}><style>{'@keyframes spinner-rotate{to{transform:rotate(360deg)}}'}</style></span>}
