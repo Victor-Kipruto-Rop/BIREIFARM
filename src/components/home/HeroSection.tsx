@@ -1,30 +1,27 @@
 import Link from "next/link";
-import { ArrowUpRight, Leaf, MapPin } from "lucide-react";
+import { ArrowUpRight, Milk } from "lucide-react";
 
 export function HeroSection() {
   return (
     <section className="hero-section">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <span className="eyebrow">Birei Farm · Grown with care</span>
-          <h1 className="display hero-title">
-            Good things <em>grow</em> with care.
-          </h1>
+          <span className="eyebrow">Birei Farm · Dairy with care</span>
+          <h1 className="display hero-title">Dairy, <em>rooted</em> in care.</h1>
           <p className="hero-description">
-            Discover the farm, explore our current offerings, and connect with the people behind the work.
-            A thoughtful approach to farming starts with care for the land and the community around it.
+            Discover Birei Farm and ask about our dairy products. Contact the farm directly to confirm current availability, quantities, and supply arrangements.
           </p>
           <div className="hero-actions">
-            <Link className="button" href="/our-farm">Discover our farm <ArrowUpRight size={16} /></Link>
-            <Link className="button button-outline" href="/products">Explore offerings</Link>
+            <Link className="button" href="/our-farm">Our dairy farm <ArrowUpRight size={16} /></Link>
+            <Link className="button button-outline" href="/products">Explore dairy products</Link>
           </div>
           <div className="hero-note">
-            <span className="hero-note-icon"><Leaf size={16} strokeWidth={1.5} /></span>
-            <span><strong>Rooted in purpose</strong><small>A closer look at Birei Farm</small></span>
+            <span className="hero-note-icon"><Milk size={17} strokeWidth={1.5} /></span>
+            <span><strong>Dairy is our focus</strong><small>Enquire about current products</small></span>
           </div>
         </div>
         <div className="hero-visual">
-          <div className="hero-landscape" role="img" aria-label="Decorative farm landscape artwork">
+          <div className="hero-landscape" role="img" aria-label="Illustrative dairy farm landscape artwork">
             <div className="landscape-sun" />
             <div className="landscape-hill landscape-hill-back" />
             <div className="landscape-hill landscape-hill-front" />
@@ -32,13 +29,13 @@ export function HeroSection() {
             <div className="landscape-field field-two" />
             <div className="landscape-tree tree-one"><i /><b /></div>
             <div className="landscape-tree tree-two"><i /><b /></div>
-            <div className="landscape-caption"><span>THE BIREI FARM STORY</span><strong>Land. Care. Growth.</strong></div>
+            <div className="landscape-caption"><span>THE BIREI DAIRY FARM</span><strong>Dairy. Care. Trust.</strong></div>
           </div>
-          <div className="hero-stamp"><span>GROWN</span><span>WITH</span><strong>CARE</strong><Leaf size={18} /></div>
-          <div className="hero-image-note">Illustrative artwork · replace with approved farm photography</div>
+          <div className="hero-stamp"><span>DAIRY</span><span>WITH</span><strong>CARE</strong><Milk size={18} /></div>
+          <div className="hero-image-note">Illustration · replace with real dairy farm photography</div>
         </div>
       </div>
-      <div className="hero-bottom-rule"><span>Thoughtful farming</span><span>Our story, products &amp; people</span><span>Get in touch <ArrowUpRight size={12} /></span></div>
+      <div className="hero-bottom-rule"><span>Dairy farming</span><span>Farm story &amp; dairy products</span><span>Enquire with us <ArrowUpRight size={12} /></span></div>
     </section>
   );
 }
