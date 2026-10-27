@@ -1,0 +1,10 @@
+{
+  "name": "Birei Farm",
+  "short_name": "Birei Farm",
+  "description": "Discover Birei Farm.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffefa",
+  "theme_color": "#1d4735",
+  "icons": []
+}
