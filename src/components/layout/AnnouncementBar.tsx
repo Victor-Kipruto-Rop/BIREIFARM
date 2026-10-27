@@ -1,0 +1,1 @@
+export function AnnouncementBar({message}:{message:string}){return <div role="status" style={{background:"var(--forest)",color:"#fff",padding:"10px 16px",textAlign:"center",fontSize:11,letterSpacing:".04em"}}>{message}</div>}
