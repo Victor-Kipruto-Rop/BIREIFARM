@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { SiteHeader } from "@/components/layout/Header";
 import { SiteFooter } from "@/components/layout/Footer";
 import { FarmOrganizationJsonLd } from "@/components/seo/JsonLd";
+import { ScrollAnimations } from "@/components/motion/ScrollAnimations";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: { default: "Birei Farm | Grown with care", template: "%s | Birei Farm" },
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = { themeColor: "#1d4735", width: "device-width", initialScale: 1 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><FarmOrganizationJsonLd /><div className="site-shell"><SiteHeader /><main>{children}</main><SiteFooter /></div></body></html>;
+  return <html lang="en"><body><FarmOrganizationJsonLd /><ScrollAnimations /><div className="site-shell"><SiteHeader /><main>{children}</main><SiteFooter /></div></body></html>;
 }
