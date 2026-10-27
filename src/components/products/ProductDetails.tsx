@@ -1,0 +1,3 @@
+import Link from "next/link";
+import type { FarmProduct } from "@/content/products";
+export function ProductDetails({product}:{product:FarmProduct}){return <article><span className="eyebrow">{product.category}</span><h1 className="display" style={{fontSize:"clamp(40px,6vw,68px)",margin:"18px 0"}}>{product.name}</h1><p className="muted" style={{fontSize:14,lineHeight:1.9}}>{product.description}</p><p style={{fontSize:11,color:"var(--leaf)",marginTop:20}}>{product.availability}</p><Link className="button" href={"/contact?subject="+encodeURIComponent("Enquiry about "+product.name)} style={{marginTop:16}}>Ask about availability</Link></article>}
