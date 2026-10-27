@@ -1,0 +1,4 @@
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
+import { farmContent } from "@/content/farm";
+export function FarmIntroduction(){return <section className="section-pad"><div className="container farm-intro-grid"><div className="image-placeholder" style={{minHeight:420,borderRadius:"2px 90px 2px 2px"}} role="img" aria-label="Approved farm photograph placeholder"><span className="image-caption">Add an approved Birei Farm photo</span></div><div><SectionHeading eyebrow="A place with purpose" title="Rooted in the land. Looking to the future." description={farmContent.story}/><div style={{marginTop:26}}><Button href="/our-farm" variant="outline">Get to know us</Button></div></div></div><style>{'.farm-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}@media(max-width:760px){.farm-intro-grid{grid-template-columns:1fr;gap:32px}}'}</style></section>}
