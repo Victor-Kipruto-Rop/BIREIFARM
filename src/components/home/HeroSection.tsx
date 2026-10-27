@@ -1,8 +1,44 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Leaf, MapPin } from "lucide-react";
+
 export function HeroSection() {
-  return <section style={{ background: "var(--cream)" }}><div className="container hero-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, .92fr) minmax(0, 1.08fr)", gap: 46, alignItems: "center", paddingBlock: "clamp(55px, 8vw, 110px)" }}>
-    <div style={{ paddingBlock: 12 }}><span className="eyebrow">A little closer to nature</span><h1 className="display" style={{ fontSize: "clamp(56px, 7vw, 94px)", margin: "24px 0 22px", maxWidth: 620 }}>Good things <em style={{ color: "var(--leaf)", fontWeight: 400 }}>grow</em> with care.</h1><p style={{ maxWidth: 430, fontSize: 15, lineHeight: 1.9, color: "var(--muted)", marginBottom: 30 }}>Discover Birei Farm, our story, and the products and experiences we offer. Thoughtful farming begins with respect for the land and the people around it.</p><div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}><Link className="button" href="/our-farm">Discover our farm <ArrowUpRight size={15} /></Link><Link className="button button-outline" href="/products">Explore products</Link></div><div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 44, color: "var(--muted)", fontSize: 10, letterSpacing: ".11em", textTransform: "uppercase" }}><span style={{ display: "grid", placeItems: "center", width: 29, height: 29, border: "1px solid var(--line)", borderRadius: "50%", color: "var(--forest)" }}><ArrowDown size={13} /></span> A farm story in the making</div></div>
-    <div className="image-placeholder hero-art" role="img" aria-label="Illustrative green farm landscape placeholder" style={{ minHeight: 510, height: "min(61vw, 650px)", borderRadius: "46% 46% 2px 2px" }}><div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, #f6f3e622 0%, #203f2b05 40%, #142d1b70 100%)" }} /><div style={{ position: "absolute", right: 20, top: 22, background: "#fffefaed", padding: "12px 15px", fontSize: 9, letterSpacing: ".13em", textTransform: "uppercase", color: "var(--forest)" }}>Farm · Nature · Community</div><div className="image-caption">Replace with an approved Birei Farm photograph</div></div>
-  </div><style>{'@media(max-width:760px){.hero-grid{grid-template-columns:1fr!important;gap:32px!important}.hero-art{min-height:390px!important;height:105vw!important;max-height:500px}}'}</style></section>;
+  return (
+    <section className="hero-section">
+      <div className="container hero-grid">
+        <div className="hero-copy">
+          <span className="eyebrow">Birei Farm · Grown with care</span>
+          <h1 className="display hero-title">
+            Good things <em>grow</em> with care.
+          </h1>
+          <p className="hero-description">
+            Discover the farm, explore our current offerings, and connect with the people behind the work.
+            A thoughtful approach to farming starts with care for the land and the community around it.
+          </p>
+          <div className="hero-actions">
+            <Link className="button" href="/our-farm">Discover our farm <ArrowUpRight size={16} /></Link>
+            <Link className="button button-outline" href="/products">Explore offerings</Link>
+          </div>
+          <div className="hero-note">
+            <span className="hero-note-icon"><Leaf size={16} strokeWidth={1.5} /></span>
+            <span><strong>Rooted in purpose</strong><small>A closer look at Birei Farm</small></span>
+          </div>
+        </div>
+        <div className="hero-visual">
+          <div className="hero-landscape" role="img" aria-label="Decorative farm landscape artwork">
+            <div className="landscape-sun" />
+            <div className="landscape-hill landscape-hill-back" />
+            <div className="landscape-hill landscape-hill-front" />
+            <div className="landscape-field field-one" />
+            <div className="landscape-field field-two" />
+            <div className="landscape-tree tree-one"><i /><b /></div>
+            <div className="landscape-tree tree-two"><i /><b /></div>
+            <div className="landscape-caption"><span>THE BIREI FARM STORY</span><strong>Land. Care. Growth.</strong></div>
+          </div>
+          <div className="hero-stamp"><span>GROWN</span><span>WITH</span><strong>CARE</strong><Leaf size={18} /></div>
+          <div className="hero-image-note">Illustrative artwork · replace with approved farm photography</div>
+        </div>
+      </div>
+      <div className="hero-bottom-rule"><span>Thoughtful farming</span><span>Our story, products &amp; people</span><span>Get in touch <ArrowUpRight size={12} /></span></div>
+    </section>
+  );
 }
