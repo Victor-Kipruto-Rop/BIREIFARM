@@ -7,7 +7,7 @@ import { FarmOrganizationJsonLd } from "@/components/seo/JsonLd";
 import { ScrollAnimations } from "@/components/motion/ScrollAnimations";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: "Birei Farm | Grown with care", template: "%s | Birei Farm" },
+  title: { default: "Birei Farm | Dairy with care", template: "%s | Birei Farm" },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
