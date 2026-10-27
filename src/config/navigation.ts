@@ -1,0 +1,1 @@
+export { mainNavigation, footerNavigation } from "@/content/navigation";
