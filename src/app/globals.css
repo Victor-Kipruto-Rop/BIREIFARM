@@ -109,3 +109,12 @@ html{scroll-padding-top:90px}
  .reveal-on-scroll{opacity:1;transform:none;will-change:auto}
  .hero-copy,.hero-visual,.hero-stamp{animation:none}
 }
+
+
+/* Native cross-page transition where the browser supports the View Transitions API */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:route-out 160ms ease-in both}
+::view-transition-new(root){animation:route-in 300ms var(--ease-out) both}
+@keyframes route-out{to{opacity:.82;transform:translateY(2px)}}
+@keyframes route-in{from{opacity:.88;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
