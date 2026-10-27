@@ -1,0 +1,3 @@
+import { Mail, MapPin, Phone } from "lucide-react";
+import { siteConfig } from "@/config/site";
+export function ContactDetails(){return <div>{[{label:"Email",value:siteConfig.contactEmail||"Official email to be confirmed",Icon:Mail},{label:"Telephone",value:siteConfig.phone||"Official telephone to be confirmed",Icon:Phone},{label:"Location",value:siteConfig.address||"Kenya · exact address to be confirmed",Icon:MapPin}].map(({label,value,Icon})=><div key={label} style={{display:"flex",gap:15,alignItems:"flex-start",marginTop:25,color:"var(--leaf)"}}><Icon size={18}/><div><strong style={{display:"block",fontSize:12,color:"var(--forest)",marginBottom:5}}>{label}</strong><span style={{fontSize:12,color:"var(--muted)"}}>{value}</span></div></div>)}</div>}
