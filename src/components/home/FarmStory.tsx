@@ -1,0 +1,3 @@
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { farmContent } from "@/content/farm";
+export function FarmStory(){return <section className="section-pad"><div className="container story-layout"><div><SectionHeading eyebrow="Our story" title={farmContent.storyTitle} description={farmContent.story}/></div><div className="image-placeholder" style={{minHeight:360}} role="img" aria-label="Farm story photography placeholder"><span className="image-caption">Replace with a real farm story photo</span></div></div><style>{'.story-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}@media(max-width:760px){.story-layout{grid-template-columns:1fr;gap:28px}}'}</style></section>}
