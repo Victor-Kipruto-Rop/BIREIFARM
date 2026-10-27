@@ -73,3 +73,39 @@
 }
 @media(max-width:420px){.hero-actions .button{width:100%}.hero-title{font-size:58px}.hero-landscape{min-height:340px}.hero-bottom-rule span:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){.nav-link:after,.product-card,.featured-card{transition:none}}
+
+
+/* Motion system: subtle, purposeful, and respectful of reduced-motion preferences */
+:root{--motion-fast:180ms;--motion-base:320ms;--motion-slow:650ms;--ease-out:cubic-bezier(.22,1,.36,1)}
+html{scroll-padding-top:90px}
+.hero-copy{animation:hero-copy-enter 760ms var(--ease-out) both}
+.hero-visual{animation:hero-visual-enter 950ms var(--ease-out) 100ms both}
+.hero-stamp{animation:stamp-enter 720ms var(--ease-out) 650ms both}
+.landscape-sun{animation:sun-glow 5s ease-in-out 1s infinite alternate}
+.landscape-hill-back{animation:landscape-drift 12s ease-in-out infinite alternate}
+.hero-note-icon{transition:background var(--motion-base) ease,color var(--motion-base) ease,transform var(--motion-base) var(--ease-out)}
+.hero-note:hover .hero-note-icon{background:var(--forest);color:var(--paper);transform:rotate(-8deg)}
+.reveal-on-scroll{opacity:0;transform:translate3d(0,24px,0);transition:opacity 680ms var(--ease-out) var(--reveal-delay,0ms),transform 680ms var(--ease-out) var(--reveal-delay,0ms);will-change:opacity,transform}
+.reveal-on-scroll.is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+.product-card,.featured-card,.value-card,.button,.nav-link,.brand,.image-placeholder{transition-timing-function:var(--ease-out)}
+.product-card .image-placeholder,.featured-card .image-placeholder{transition:transform 650ms var(--ease-out),filter 500ms ease}
+.product-card:hover .image-placeholder,.featured-card:hover .image-placeholder{transform:scale(1.018);filter:saturate(1.06)}
+.product-card:focus-visible,.featured-card:focus-visible{outline:2px solid var(--clay);outline-offset:6px}
+.button svg{transition:transform var(--motion-base) var(--ease-out)}
+.button:hover svg{transform:translate(2px,-2px)}
+.site-header{transition:box-shadow var(--motion-base) ease,background var(--motion-base) ease}
+.menu-toggle{transition:background var(--motion-fast) ease,transform var(--motion-fast) ease}
+.menu-toggle:active{transform:scale(.96)}
+@keyframes hero-copy-enter{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes hero-visual-enter{from{opacity:0;transform:translate3d(0,22px,0) scale(.985)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+@keyframes stamp-enter{0%{opacity:0;transform:rotate(-8deg) scale(.8)}100%{opacity:1;transform:rotate(8deg) scale(1)}}
+@keyframes sun-glow{from{box-shadow:0 0 0 18px #f7edc82b,0 0 0 42px #f7edc817}to{box-shadow:0 0 0 24px #f7edc824,0 0 0 52px #f7edc80d}}
+@keyframes landscape-drift{from{transform:translateX(-1%) rotate(-7deg)}to{transform:translateX(1%) rotate(-5deg)}}
+@keyframes mobile-nav-enter{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){.nav-links[data-open=true]{animation:mobile-nav-enter 240ms var(--ease-out) both}.hero-copy,.hero-visual{animation-duration:650ms}.reveal-on-scroll{transform:translate3d(0,16px,0)}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ .reveal-on-scroll{opacity:1;transform:none;will-change:auto}
+ .hero-copy,.hero-visual,.hero-stamp{animation:none}
+}
