@@ -1,0 +1,1 @@
+export function Skeleton({width="100%",height=16}:{width?:string|number;height?:number}){return <span aria-hidden="true" style={{display:"block",width,height,background:"var(--cream)",borderRadius:2,animation:"skeleton-pulse 1.4s ease-in-out infinite"}}><style>{'@keyframes skeleton-pulse{0%,100%{opacity:1}50%{opacity:.5}}'}</style></span>}
