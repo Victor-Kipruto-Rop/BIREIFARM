@@ -1,0 +1,5 @@
+"use client";
+import { useEffect } from "react";
+import { X } from "lucide-react";
+import type { ReactNode } from "react";
+export function Modal({open,onClose,title,children}:{open:boolean;onClose:()=>void;title:string;children:ReactNode}){useEffect(()=>{if(!open)return;function keydown(e:KeyboardEvent){if(e.key==="Escape")onClose()}window.addEventListener("keydown",keydown);return()=>window.removeEventListener("keydown",keydown)},[open,onClose]);if(!open)return null;return <div role="presentation" onMouseDown={e=>{if(e.target===e.currentTarget)onClose()}} style={{position:"fixed",inset:0,zIndex:90,background:"#102218a8",display:"grid",placeItems:"center",padding:20}}><section role="dialog" aria-modal="true" aria-label={title} style={{background:"var(--paper)",padding:28,width:"min(100%,560px)",position:"relative"}}><button type="button" onClick={onClose} aria-label="Close dialog" style={{position:"absolute",top:16,right:16,background:"transparent",border:0}}><X size={18}/></button><h2 style={{font:"400 28px var(--serif)",marginTop:0,paddingRight:30}}>{title}</h2>{children}</section></div>}
